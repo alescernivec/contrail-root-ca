@@ -38,11 +38,52 @@ Basic contrail security services consist of:
 * contrail-oauth-as Contrail Oauth AS
 * contrail-security-commons Contrail Security Commons
 
-Create host certificates:
+Create host certificates ($SERVICE):
 * contrail-ca-server
 * contrail-oauth-as
 * contrail-federation-api
 * contrail-federation-web
+* oauth-java-client-demo
+
+List of certificates and locations
+----------
+```
+/etc/tomcat6/cacerts.jks
+/etc/tomcat6/$SERVICE.jks
+/etc/tomcat6/$SERVICE.pkcs12
+```
+Basic tomcat connectors
+----------
+
+```
+<!-- CA Server - user cert -->
+<Connector port="8081" protocol="HTTP/1.1" SSLEnabled="true"
+keystoreType="PKCS12" keystorePass="contrail" 
+keystoreFile="/etc/tomcat6/contrail-ca-server.pkcs12"
+maxThreads="150" scheme="https" secure="true"
+clientAuth="false" sslProtocol="TLS"
+/>
+```
+```
+<!-- OAuth AS Server -->
+<Connector port="8443" protocol="HTTP/1.1" SSLEnabled="true"
+   maxThreads="150" scheme="https" secure="true"
+   clientAuth="want" sslProtocol="TLS"
+   keystoreFile="/etc/tomcat6/contrail-oauth-as.jks" keystorePass="contrail"
+   truststoreFile="/etc/tomcat6/ccacerts.jks" truststorePass="contrail"
+   keyAlias="ocontrail-oauth-as"
+   ciphers="SSL_RSA_WITH_RC4_128_SHA" />
+```
+```
+<!-- CA Server - delegated user certs -->
+<Connector port="8444" protocol="HTTP/1.1" 
+SSLEnabled="true" keystoreType="PKCS12" 
+keystorePass="contrail" keystoreFile="/etc/tomcat6/contrail-ca-server.pkcs12" 
+maxThreads="150" scheme="https" secure="true" clientAuth="want" 
+sslProtocol="TLS" truststoreType="JKS" truststorePass="contrail" 
+truststoreFile="/etc/tomcat6/cacerts.jks"/>
+```
+
 
 BATCH JOB:
 ----------
