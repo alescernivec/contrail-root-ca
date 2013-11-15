@@ -50,7 +50,7 @@ clientAuth="false" sslProtocol="TLS"
    clientAuth="want" sslProtocol="TLS"
    keystoreFile="/etc/tomcat6/contrail-oauth-as.jks" keystorePass="contrail"
    truststoreFile="/etc/tomcat6/cacerts.jks" truststorePass="contrail"
-   keyAlias="ocontrail-oauth-as"
+   keyAlias="contrail-oauth-as"
    ciphers="SSL_RSA_WITH_RC4_128_SHA" />
 
 <!-- CA Server - delegated user certs -->
