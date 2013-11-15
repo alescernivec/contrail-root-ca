@@ -12,4 +12,7 @@ do
 	rm -fr ${OUTDIR}/${SERVICE}.crt
 	rm -fr ${OUTDIR}/${SERVICE}.key
 	rm -fr ${OUTDIR}/${SERVICE}.pkcs12
+	rm -fr ${OUTDIR}/${SERVICE}.der
 done
+
+rm -fr ${OUTDIR}/cacerts.jks
