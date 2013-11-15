@@ -30,6 +30,9 @@ And just for fun, example how to generate **pkcs12** file:
 
 To sum up
 ----
+Dependencies:
+* java-jdk6-jre
+
 Basic contrail security services consist of:
 
 * contrail-ca-server Contrail CA Server
