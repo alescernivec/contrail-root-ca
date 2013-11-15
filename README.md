@@ -31,7 +31,7 @@ And just for fun, example how to generate **pkcs12** file:
 To sum up
 ----
 Dependencies:
-* java-jdk6-jre
+* openjdk-6-jre
 
 Basic contrail security services consist of:
 
