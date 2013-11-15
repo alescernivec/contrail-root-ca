@@ -92,6 +92,36 @@ $ mvn exec:java -Dexec.mainClass="org.ow2.contrail.common.oauth.demo.ClientCrede
 
 If you get an error, something is missconfigured.
 
+Troubleshooting
+----------
+
+```
+keytool -list -keystore /etc/tomcat6/cacerts.jks
+```
+
+This should return 5 entries
+
+```
+root@ubuntu:~/contrail-root-ca# keytool -list -keystore /etc/tomcat6/cacerts.jks 
+Enter keystore password:  
+
+Keystore type: JKS
+Keystore provider: SUN
+
+Your keystore contains 5 entries
+
+contrail-ca-server, Nov 15, 2013, trustedCertEntry,
+Certificate fingerprint (MD5): 8A:A6:D8:80:A1:E5:B3:01:94:0A:B4:65:3A:41:45:5E
+contrail-federation-web, Nov 15, 2013, trustedCertEntry,
+Certificate fingerprint (MD5): A0:A3:BF:58:3D:26:2C:F3:82:ED:90:02:ED:AE:B5:05
+contrail-federation-api, Nov 15, 2013, trustedCertEntry,
+Certificate fingerprint (MD5): 1C:24:DD:39:06:93:85:CB:AE:68:9E:A8:DF:FE:32:20
+oauth-java-client-demo, Nov 15, 2013, trustedCertEntry,
+Certificate fingerprint (MD5): B6:67:99:6D:B0:5F:7F:EB:B2:CD:73:45:5B:CC:11:4F
+contrail-oauth-as, Nov 15, 2013, trustedCertEntry,
+Certificate fingerprint (MD5): 65:F7:CE:46:C7:DD:86:08:0B:15:8F:F5:D1:80:18:0E
+```
+
 List of certificates and locations (for each service):
 ----------
 
