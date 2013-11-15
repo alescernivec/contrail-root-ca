@@ -41,14 +41,27 @@ Basic contrail security services consist of:
 * contrail-oauth-as Contrail Oauth AS
 * contrail-security-commons Contrail Security Commons
 
-Create host certificates ($SERVICE):
+List of services that are provided with the certificates ($SERVICE):
 * contrail-ca-server
 * contrail-oauth-as
 * contrail-federation-api
 * contrail-federation-web
 * oauth-java-client-demo
 
-List of certificates and locations
+Usage
+---------
+
+```
+# echo "deb http://contrail.ow2.org/repositories/binaries/testing/xUbuntu_12.04/ ./" >> /etc/apt/sources.list
+# wget -O - http://contrail.ow2.org/repositories/contrail.pub | sudo apt-key add -
+# apt-get update
+# apt-get install contrail-ca-server contrail-federation-api contrail-oauth-as contrail-security-commons
+# create-rootca-files /DC=Slovenia/DC=XLAB/DC=Contrail/DC=ca
+# ./create_ca.sh
+# ./create_service_certs.sh
+```
+
+List of certificates and locations (for each service):
 ----------
 ```
 /etc/tomcat6/cacerts.jks
