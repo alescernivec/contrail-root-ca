@@ -49,7 +49,7 @@ clientAuth="false" sslProtocol="TLS"
    maxThreads="150" scheme="https" secure="true"
    clientAuth="want" sslProtocol="TLS"
    keystoreFile="/etc/tomcat6/contrail-oauth-as.jks" keystorePass="contrail"
-   truststoreFile="/etc/tomcat6/ccacerts.jks" truststorePass="contrail"
+   truststoreFile="/etc/tomcat6/cacerts.jks" truststorePass="contrail"
    keyAlias="ocontrail-oauth-as"
    ciphers="SSL_RSA_WITH_RC4_128_SHA" />
 
