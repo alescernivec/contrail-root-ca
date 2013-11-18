@@ -58,6 +58,14 @@ $ svn co svn://svn.forge.objectweb.org/svnroot/contrail/trunk/common/oauth/oauth
 $ mkdir -p /etc/contrail/oauth-java-client-demo/ && cd oauth-java-client-demo/ && cp ./src/main/conf/oauth-java-client-demo.properties /etc/contrail/oauth-java-client-demo/
 $ mvn clean compile
 ```
+Patch the oauth-java-client-demo:
+```
+$ cd /path/to/cloned-git/contrail-root-ca/pathces
+$ cp oauth-java-client-demo.diff /etc/contrail/oauth-java-client-demo/ && cd /etc/contrail/oauth-java-client-demo/
+$ patch -p0 < oauth-java-client-demo.diff
+```
+
+Now, navigate back to the checked out dir with oauth-java-client-demo maven project.
 
 Ask for an oauth2 token for user  contrailuser :
 ```
@@ -65,6 +73,20 @@ $ mvn exec:java -Dexec.mainClass="org.ow2.contrail.common.oauth.demo.ClientCrede
 ```
 
 If you get an error, something is missconfigured.
+
+You should get something similar to:
+```
+Requesting OAuth access token from the Authorisation Server https://contrail-oauth-as:8443/oauth-as/r/access_token/request on behalf of the user caa6e102-8ff0-400f-a120-23149326a936.
+Received access token: 965ec95f-9d51-3561-945f-ed9ad831663c
+```
+
+Now, get the cert:
+```
+mvn exec:java -Dexec.mainClass="org.ow2.contrail.common.oauth.demo.ClientCredentialsFlowDemo" -Dexec.args="getCert 965ec95f-9d51-3561-945f-ed9ad831663c"
+```
+Of course, change the token UUID with the one obtained in the step before.
+
+You should get the delegated certificate indicating everything works!
 
 Troubleshooting
 ----------
