@@ -39,6 +39,7 @@ Usage
 # ./create_ca.sh
 # ./create_service_certs.sh
 # ./patch-files.sh
+# service tomcat6 restart
 ```
 Testing
 ----------
