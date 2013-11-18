@@ -7,33 +7,16 @@ Scripts provided by this package install CA Server, OAuth AS Server, Federation 
 all these services with simple scenario: gets OAuth token from the AS and queries CA Server for delegated certificate
 with the OAuth token provided. These scripts asume that we install the packages on clean Ubuntu 12.04 server. We will update this package with additional services like Federation Web and IdP soon.
 
-Details
-----
-Dependencies:
-* contrail-federation
-
-Basic contrail security services consist of:
-
-* contrail-ca-server Contrail CA Server
-* contrail-federation-api Contrail Federation API
-* contrail-federation-db Contrail Federation Database
-* contrail-oauth-as Contrail Oauth AS
-* contrail-security-commons Contrail Security Commons
-
-List of services that are provided with the certificates ($SERVICE):
-* contrail-ca-server
-* contrail-oauth-as
-* contrail-federation-api
-* contrail-federation-web
-* oauth-java-client-demo
-
 Usage
 ---------
-
+This will set up contrail testing repository - latest testing packages from Contrail:
 ```
 # echo "deb http://contrail.ow2.org/repositories/binaries/testing/xUbuntu_12.04/ ./" >> /etc/apt/sources.list
 # wget -O - http://contrail.ow2.org/repositories/contrail.pub | sudo apt-key add -
 # apt-get update
+```
+This installs basic security packages. During the installation, you will be queried for uname and pass for the MySQL server.
+```
 # apt-get install contrail-ca-server contrail-federation-api contrail-oauth-as contrail-security-commons
 # create-rootca-files /DC=Slovenia/DC=XLAB/DC=Contrail/DC=ca
 # ./create_ca.sh
@@ -92,6 +75,24 @@ mvn exec:java -Dexec.mainClass="org.ow2.contrail.common.oauth.demo.ClientCredent
 Of course, change the token UUID with the one obtained in the step before.
 
 You should get the delegated certificate indicating everything works!
+
+Details
+----
+
+Basic contrail security services consist of:
+
+* contrail-ca-server Contrail CA Server
+* contrail-federation-api Contrail Federation API
+* contrail-federation-db Contrail Federation Database
+* contrail-oauth-as Contrail Oauth AS
+* contrail-security-commons Contrail Security Commons
+
+List of services that are provided with the certificates:
+* contrail-ca-server
+* contrail-oauth-as
+* contrail-federation-api
+* contrail-federation-web
+* oauth-java-client-demo
 
 Troubleshooting
 ----------
