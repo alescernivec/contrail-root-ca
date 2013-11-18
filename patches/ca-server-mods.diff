@@ -1,0 +1,25 @@
+--- WEB-INF/web.xml	2013-08-22 16:55:18.000000000 +0000
++++ /var/lib/tomcat6/webapps/ca/WEB-INF/web.xml	2013-11-18 07:26:58.442371304 +0000
+@@ -269,11 +269,11 @@
+     <filter-class>eu.contrail.security.OAuthFilter</filter-class>
+     <init-param>
+       <param-name>checkTokenEndpointUri</param-name>
+-      <param-value>https://contrail.xlab.si:8443/oauth-as/r/access_token/check</param-value>
++      <param-value>https://contrail-oauth-as:8443/oauth-as/r/access_token/check</param-value>
+     </init-param>
+     <init-param>
+       <param-name>keystoreFile</param-name>
+-      <param-value>/etc/contrail/ca-server/ca-server.jks</param-value>
++      <param-value>/etc/tomcat6/contrail-ca-server.jks</param-value>
+     </init-param>
+     <init-param>
+       <param-name>keystorePass</param-name>
+@@ -281,7 +281,7 @@
+     </init-param>
+     <init-param>
+       <param-name>truststoreFile</param-name>
+-      <param-value>/etc/contrail/ca-server/cacerts.jks</param-value>
++      <param-value>/etc/tomcat6/cacerts.jks</param-value>
+     </init-param>
+     <init-param>
+       <param-name>truststorePass</param-name>

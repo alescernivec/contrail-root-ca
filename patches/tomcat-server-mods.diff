@@ -1,0 +1,35 @@
+--- server.xml	2013-11-18 08:19:49.266371500 +0000
++++ /etc/tomcat6/server.xml	2013-11-15 14:01:38.578371511 +0000
+@@ -72,6 +72,32 @@
+                connectionTimeout="20000" 
+                URIEncoding="UTF-8"
+                redirectPort="8443" />
++
++<!-- CA Server - user cert -->
++<Connector port="8081" protocol="HTTP/1.1" SSLEnabled="true"
++keystoreType="PKCS12" keystorePass="contrail" 
++keystoreFile="/etc/tomcat6/contrail-ca-server.pkcs12"
++maxThreads="150" scheme="https" secure="true"
++clientAuth="false" sslProtocol="TLS"
++/>
++
++<!-- OAuth AS Server -->
++<Connector port="8443" protocol="HTTP/1.1" SSLEnabled="true"
++   maxThreads="150" scheme="https" secure="true"
++   clientAuth="want" sslProtocol="TLS"
++   keystoreFile="/etc/tomcat6/contrail-oauth-as.jks" keystorePass="contrail"
++   truststoreFile="/etc/tomcat6/cacerts.jks" truststorePass="contrail"
++   keyAlias="contrail-oauth-as"
++   ciphers="SSL_RSA_WITH_RC4_128_SHA" />
++
++<!-- CA Server - delegated user certs -->
++<Connector port="8444" protocol="HTTP/1.1" 
++SSLEnabled="true" keystoreType="PKCS12" 
++keystorePass="contrail" keystoreFile="/etc/tomcat6/contrail-ca-server.pkcs12" 
++maxThreads="150" scheme="https" secure="true" clientAuth="want" 
++sslProtocol="TLS" truststoreType="JKS" truststorePass="contrail" 
++truststoreFile="/etc/tomcat6/cacerts.jks"/>
++
+     <!-- A "Connector" using the shared thread pool-->
+     <!--
+     <Connector executor="tomcatThreadPool"

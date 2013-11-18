@@ -1,0 +1,10 @@
+--- hosts-backup	2013-11-18 08:07:48.514371543 +0000
++++ /etc/hosts	2013-11-15 15:20:00.810371436 +0000
+@@ -1,4 +1,7 @@
+ 127.0.0.1 localhost
++127.0.0.1 contrail-oauth-as
++127.0.0.1 contrail-ca-server
++127.0.0.1 oauth-java-client-demo
+ 
+ 127.0.1.1 ubuntu.defaultdomain ubuntu
+ 
