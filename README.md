@@ -1,6 +1,12 @@
 contrail-root-ca
 ================
 
+The purpose of this package is to help bootstrapping the federation security services provided by Contrail packages. 
+The main problem of the packages is setting up necessary details like service certificates, initial proerties etc.
+Scripts provided by this package install CA Server, OAuth AS Server, Federation API and DEMO java program that tests
+all these services with simple scenario: gets OAuth token from the AS and queries CA Server for delegated certificate
+with the OAuth token provided. We will update this package with additional services like Federation Web and IdP soon.
+
 Details
 ----
 Dependencies:
