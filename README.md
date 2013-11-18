@@ -64,7 +64,7 @@ $ mvn clean compile
 ```
 Patch the oauth-java-client-demo:
 ```
-$ cd /path/to/cloned-git/contrail-root-ca/pathces
+$ cd /path/to/cloned-git/contrail-root-ca/patches
 $ cp oauth-java-client-demo.diff /etc/contrail/oauth-java-client-demo/ && cd /etc/contrail/oauth-java-client-demo/
 $ patch -p0 < oauth-java-client-demo.diff
 ```
