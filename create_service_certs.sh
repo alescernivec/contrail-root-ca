@@ -19,3 +19,5 @@ do
 	openssl x509 -outform der -in ${OUTDIR}/$SERVICE.crt -out ${OUTDIR}/$SERVICE.der
 	keytool -import -alias ${SERVICE} -deststorepass contrail -srcstorepass contrail -keystore ${OUTDIR}/cacerts.jks -file ${OUTDIR}/${SERVICE}.der -noprompt
 done
+echo "Adding ROOT CA's cert to the truststore"
+keytool -import -alias rootCa -deststorepass contrail -srcstorepass contrail -keystore ${OUTDIR}/cacerts.jks -file /var/lib/contrail/ca-server/rootca-cert.pem -noprompt
