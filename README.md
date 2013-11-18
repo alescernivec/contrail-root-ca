@@ -32,8 +32,6 @@ Usage
 # create-rootca-files /DC=Slovenia/DC=XLAB/DC=Contrail/DC=ca
 # ./create_ca.sh
 # ./create_service_certs.sh
-# git clone https://github.com/alescernivec/contrail-root-ca.git
-# cd contrail-root-ca
 # ./patch-files.sh
 ```
 Testing
