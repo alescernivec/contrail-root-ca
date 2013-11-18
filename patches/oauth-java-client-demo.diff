@@ -1,0 +1,23 @@
+--- oauth-java-client-demo.properties	2013-11-18 12:30:30.130370713 +0000
++++ oauth-java-client-demo-new.properties	2013-11-18 12:30:18.426371536 +0000
+@@ -1,13 +1,13 @@
+ client.id=oauth-java-client-demo
+ client.secret=somesecret
+-client.oauth2callbackUri=https://localhost:8443/oauth-demo/oauth2callback
+-client.keystore.file=/etc/contrail/oauth-java-client-demo/oauth-java-client-demo.jks
++client.oauth2callbackUri=https://oauth-java-client-demo:8443/oauth-demo/oauth2callback
++client.keystore.file=/etc/tomcat6/oauth-java-client-demo.jks
+ client.keystore.pass=contrail
+-client.truststore.file=/etc/contrail/oauth-java-client-demo/cacerts.jks
++client.truststore.file=/etc/tomcat6/cacerts.jks
+ client.truststore.pass=contrail
+-authzserver.authorizationEndpointUri=https://localhost:8443/oauth-as/authorize
+-authzserver.accessTokenEndpointUri=https://localhost:8443/oauth-as/r/access_token/request
+-authzserver.accessTokenValidationEndpointUri=https://localhost:8443/oauth-as/r/access_token/check
+-caserver.userCertUri=https://localhost:8443/ca/o/delegateduser
++authzserver.authorizationEndpointUri=https://contrail-oauth-as:8443/oauth-as/authorize
++authzserver.accessTokenEndpointUri=https://contrail-oauth-as:8443/oauth-as/r/access_token/request
++authzserver.accessTokenValidationEndpointUri=https://contrail-oauth-as:8443/oauth-as/r/access_token/check
++caserver.userCertUri=https://contrail-ca-server:8444/ca/o/delegateduser
+ 
+ scope=USER_PROFILE GENERATE_USER_CERTIFICATE
