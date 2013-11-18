@@ -103,24 +103,26 @@ keytool -list -keystore /etc/tomcat6/cacerts.jks
 This should return 5 entries
 
 ```
-root@ubuntu:~/contrail-root-ca# keytool -list -keystore /etc/tomcat6/cacerts.jks 
+root@ubuntu:~/oauth-java-client-demo# keytool -list -keystore /etc/tomcat6/cacerts.jks 
 Enter keystore password:  
 
 Keystore type: JKS
 Keystore provider: SUN
 
-Your keystore contains 5 entries
+Your keystore contains 6 entries
 
-contrail-ca-server, Nov 15, 2013, trustedCertEntry,
-Certificate fingerprint (MD5): 8A:A6:D8:80:A1:E5:B3:01:94:0A:B4:65:3A:41:45:5E
-contrail-federation-web, Nov 15, 2013, trustedCertEntry,
-Certificate fingerprint (MD5): A0:A3:BF:58:3D:26:2C:F3:82:ED:90:02:ED:AE:B5:05
-contrail-federation-api, Nov 15, 2013, trustedCertEntry,
-Certificate fingerprint (MD5): 1C:24:DD:39:06:93:85:CB:AE:68:9E:A8:DF:FE:32:20
-oauth-java-client-demo, Nov 15, 2013, trustedCertEntry,
-Certificate fingerprint (MD5): B6:67:99:6D:B0:5F:7F:EB:B2:CD:73:45:5B:CC:11:4F
-contrail-oauth-as, Nov 15, 2013, trustedCertEntry,
-Certificate fingerprint (MD5): 65:F7:CE:46:C7:DD:86:08:0B:15:8F:F5:D1:80:18:0E
+contrail-ca-server, Nov 18, 2013, trustedCertEntry,
+Certificate fingerprint (MD5): B1:FB:22:9A:99:BA:3B:17:E0:CF:5A:C0:25:36:CA:04
+rootca, Nov 18, 2013, trustedCertEntry,
+Certificate fingerprint (MD5): 66:F7:3C:4A:33:4C:7D:FE:5D:86:2D:18:2E:79:B8:07
+contrail-federation-web, Nov 18, 2013, trustedCertEntry,
+Certificate fingerprint (MD5): 52:2C:C9:75:4C:CA:6F:18:72:F9:B9:48:DD:A5:DB:FA
+contrail-federation-api, Nov 18, 2013, trustedCertEntry,
+Certificate fingerprint (MD5): F0:69:67:92:25:75:CD:44:48:8E:AF:1D:B3:AD:72:34
+oauth-java-client-demo, Nov 18, 2013, trustedCertEntry,
+Certificate fingerprint (MD5): 92:06:3D:3C:A9:EB:D5:33:8A:96:C7:5F:34:18:88:F3
+contrail-oauth-as, Nov 18, 2013, trustedCertEntry,
+Certificate fingerprint (MD5): C9:92:87:FE:05:C1:F9:AB:FA:A7:33:39:79:7E:C3:6F
 ```
 
 List of certificates and locations (for each service):
