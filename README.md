@@ -32,36 +32,10 @@ Usage
 # create-rootca-files /DC=Slovenia/DC=XLAB/DC=Contrail/DC=ca
 # ./create_ca.sh
 # ./create_service_certs.sh
+# git clone https://github.com/alescernivec/contrail-root-ca.git
+# cd contrail-root-ca
+# ./patch-files.sh
 ```
-Now, edit basic tomcat connectors (under /etc/tomcat6/services.xml):
-
-```
-<!-- CA Server - user cert -->
-<Connector port="8081" protocol="HTTP/1.1" SSLEnabled="true"
-keystoreType="PKCS12" keystorePass="contrail" 
-keystoreFile="/etc/tomcat6/contrail-ca-server.pkcs12"
-maxThreads="150" scheme="https" secure="true"
-clientAuth="false" sslProtocol="TLS"
-/>
-
-<!-- OAuth AS Server -->
-<Connector port="8443" protocol="HTTP/1.1" SSLEnabled="true"
-   maxThreads="150" scheme="https" secure="true"
-   clientAuth="want" sslProtocol="TLS"
-   keystoreFile="/etc/tomcat6/contrail-oauth-as.jks" keystorePass="contrail"
-   truststoreFile="/etc/tomcat6/cacerts.jks" truststorePass="contrail"
-   keyAlias="contrail-oauth-as"
-   ciphers="SSL_RSA_WITH_RC4_128_SHA" />
-
-<!-- CA Server - delegated user certs -->
-<Connector port="8444" protocol="HTTP/1.1" 
-SSLEnabled="true" keystoreType="PKCS12" 
-keystorePass="contrail" keystoreFile="/etc/tomcat6/contrail-ca-server.pkcs12" 
-maxThreads="150" scheme="https" secure="true" clientAuth="want" 
-sslProtocol="TLS" truststoreType="JKS" truststorePass="contrail" 
-truststoreFile="/etc/tomcat6/cacerts.jks"/>
-```
-
 Testing
 ----------
 
