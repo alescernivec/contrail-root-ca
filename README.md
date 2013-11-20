@@ -15,6 +15,11 @@ This will set up contrail testing repository - latest testing packages from Cont
 # wget -O - http://contrail.ow2.org/repositories/contrail.pub | sudo apt-key add -
 # apt-get update
 ```
+Alternative repository is (in case you have problems with the ow2.org.
+```
+http://download.opensuse.org/repositories/home:/contrail:/testing/xUbuntu_12.04/
+```
+
 This installs basic security packages and configures the key, certificates and service packages. 
 ```
 # ./install notest
