@@ -1,0 +1,13 @@
+--- wildcard-simplesaml-ssl	2013-11-20 15:02:23.650249492 +0000
++++ wildcard-simplesaml-ssl-new	2013-11-20 15:00:21.798249576 +0000
+@@ -2,8 +2,8 @@
+ <VirtualHost *:443>
+ 	ServerAdmin admin@contrail.eu
+ 
+-        ServerName contrail-idp.contrail.eu
+-        ServerAlias *.contrail-idp.contrail.eu
++	ServerName contrail-federation-id-prov-support
++	ServerAlias contrail-federation-id-prov-support
+ 	Alias /simplesaml /usr/share/simplesamlphp-1.9.0/www
+ 	DocumentRoot /usr/share/simplesamlphp-1.9.0/www
+ 	<Directory />

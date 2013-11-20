@@ -1,0 +1,29 @@
+--- saml20-sp-remote.php	2013-11-20 13:18:38.342249545 +0000
++++ saml20-sp-remote.php-new	2013-11-20 14:46:17.402250825 +0000
+@@ -23,6 +23,11 @@
+ 	'SingleLogoutService' => 'https://contrail-federation-web.contrail.eu/saml2/ls/',
+ 	);
+ 
++$metadata['https://contrail-federation-web/saml2/metadata/'] = array(
++	'AssertionConsumerService' => 'https://contrail-federation-web/saml2/acs/',
++	'SingleLogoutService' => 'https://contrail-federation-web/saml2/ls/',
++	);
++
+ /*
+  * This example shows an example config that works with Google Apps for education.
+  * What is important is that you have an attribute in your IdP that maps to the local part of the email address
+@@ -48,3 +53,14 @@
+         'SingleLogoutService' => 'https://localhost:8443/oauth-as/slo',
+         );
+ 
++$metadata['https://contrail-oauth-as:8443/oauth-as/'] = array(
++        'AssertionConsumerService' => array(
++            array(
++               'index' => 0,
++               'isDefault' => TRUE,
++               'Location' => 'https://contrail-oauth-as:8443/oauth-as/acs',
++               'Binding' => 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST',
++            )
++        ),
++        'SingleLogoutService' => 'https://contrail-oauth-as:8443/oauth-as/slo',
++        );

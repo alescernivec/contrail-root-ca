@@ -1,0 +1,11 @@
+--- saml20-idp-hosted.php	2013-11-20 13:18:38.342249545 +0000
++++ saml20-idp-hosted.php-new	2013-11-20 14:37:37.438249589 +0000
+@@ -11,7 +11,7 @@
+          *
+          * Can be '__DEFAULT__', to use this entry by default.
+          */
+-        'host' => 'multi.contrail-idp.contrail.eu',
++        'host' => 'contrail-federation-id-prov-support',
+ 
+         /* X.509 key and certificate. Relative to the cert directory. */
+         'privatekey' => 'wildcard-contrail-idp.key',
