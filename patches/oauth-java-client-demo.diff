@@ -18,6 +18,6 @@
 +authzserver.authorizationEndpointUri=https://contrail-oauth-as:8443/oauth-as/authorize
 +authzserver.accessTokenEndpointUri=https://contrail-oauth-as:8443/oauth-as/r/access_token/request
 +authzserver.accessTokenValidationEndpointUri=https://contrail-oauth-as:8443/oauth-as/r/access_token/check
-+caserver.userCertUri=https://contrail-ca-server:8443/ca/o/delegateduser
++caserver.userCertUri=https://contrail-ca-server:8444/ca/o/delegateduser
  
  scope=USER_PROFILE GENERATE_USER_CERTIFICATE
