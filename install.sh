@@ -4,6 +4,8 @@ ROOTCA_SN="/DC=Slovenia/DC=XLAB/DC=Contrail/DC=ca"
 DEMO_NAME="oauth-client-cred-flow-demo"
 DEMO_LINK="http://bamboo.ow2.org/artifact/CONTRAIL-TRUNK/JOB1/build-latestSuccessful/Packages/common/oauth/oauth-java-client-demo/client-cred-flow/target/contrail-${DEMO_NAME}.tar.gz"
 
+export DEBIAN_FRONTEND="noninteractive"
+
 EXPECTED_ARGS=1
 E_BADARGS=65
 
