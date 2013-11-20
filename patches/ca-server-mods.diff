@@ -10,7 +10,7 @@
      <init-param>
        <param-name>keystoreFile</param-name>
 -      <param-value>/etc/contrail/ca-server/ca-server.jks</param-value>
-+      <param-value>/etc/tomcat6/contrail-ca-server.jks</param-value>
++      <param-value>/etc/tomcat6/contrail-ca-server/contrail-ca-server.jks</param-value>
      </init-param>
      <init-param>
        <param-name>keystorePass</param-name>
