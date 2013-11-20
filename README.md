@@ -15,42 +15,16 @@ This will set up contrail testing repository - latest testing packages from Cont
 # wget -O - http://contrail.ow2.org/repositories/contrail.pub | sudo apt-key add -
 # apt-get update
 ```
-This installs basic security packages. During the installation, you will be queried for uname and pass for the MySQL server.
+This installs basic security packages and configures the key, certificates and service packages. 
 ```
-# apt-get install contrail-ca-server contrail-federation-api contrail-oauth-as contrail-security-commons
-# create-rootca-files /DC=Slovenia/DC=XLAB/DC=Contrail/DC=ca
-# ./create_ca.sh
-# ./create_service_certs.sh
-# ./patch-files.sh
-# service tomcat6 restart
+# ./install notest
 ```
 Testing
 ----------
 
-How to test installed components?
+How to test installed components? You should first install basic sec packages with "notest". After that, issue
 ```
-# apt-get install maven openjdk-6-jdk subversion
-```
-
-Install contrail parent POM:
-```
-$ svn co svn://svn.forge.objectweb.org/svnroot/contrail/trunk/common/contrail-parent
-$ cd contrail-parent
-$ mvn install
-$ cd ..
-```
-
-Checkout  oauth-java-client-demo :
-```
-$ svn co svn://svn.forge.objectweb.org/svnroot/contrail/trunk/common/oauth/oauth-java-client-demo/
-$ mkdir -p /etc/contrail/oauth-java-client-demo/ && cd oauth-java-client-demo/ && cp ./src/main/conf/oauth-java-client-demo.properties /etc/contrail/oauth-java-client-demo/
-$ mvn clean compile
-```
-Patch the oauth-java-client-demo:
-```
-$ cd /path/to/cloned-git/contrail-root-ca/patches
-$ cp oauth-java-client-demo.diff /etc/contrail/oauth-java-client-demo/ && cd /etc/contrail/oauth-java-client-demo/
-$ patch -p0 < oauth-java-client-demo.diff
+# ./install test
 ```
 
 Now, navigate back to the checked out dir with oauth-java-client-demo maven project.
@@ -92,7 +66,6 @@ List of services that are provided with the certificates:
 * contrail-oauth-as
 * contrail-federation-api
 * contrail-federation-web
-* oauth-java-client-demo
 
 Troubleshooting
 ----------
@@ -101,7 +74,7 @@ Troubleshooting
 keytool -list -keystore /etc/tomcat6/cacerts.jks
 ```
 
-This should return 5 entries
+This should return 6 entries
 
 ```
 root@ubuntu:~/oauth-java-client-demo# keytool -list -keystore /etc/tomcat6/cacerts.jks 
@@ -131,29 +104,33 @@ List of certificates and locations (for each service):
 
 ```
 /etc/tomcat6/cacerts.jks
-/etc/tomcat6/$SERVICE.jks
-/etc/tomcat6/$SERVICE.pkcs12
+/etc/tomcat6/$SERVICE/$SERVICE.jks
+/etc/tomcat6/$SERVICE/$SERVICE.pkcs12
 ```
 
 Internal CA usage
 ----------
+You do not need to read this if you do not care about the details on how the keys and certs are generated.
+
 Demonstrates how to create everything you need for signing e.g. host certificates by using exising CA cert and key files.
 
 First, generate what you need for the CA to work. Navigate to some empty directory and issue:
 ```
-./create_ca.sh
+./bin/create_ca.sh
 ```
 This creates all neccessary keys, certs, keystores, truststores:
 ```
-create_service_certs.sh
+./bin/create_service_certs.sh
 ```
 To clean up:
 ```
-./clean.sh
+./bin/clean.sh
 ```
 
 More details
 ----------
+
+You do not need to read this if you do not care about the details on how the keys and certs are generated.
 
 Example follows on how to sign the CSR. **in** takes path to the server's CSR, **out** takes output to the new cervers cert (signed one). **keyfile** points to root CA's key, **cert** points to the root CA's certificate.
 ```
