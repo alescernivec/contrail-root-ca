@@ -1,7 +1,7 @@
 #!/bin/bash
 
 OUTDIR="/etc/tomcat6"
-SERVICES="contrail-ca-server contrail-oauth-as contrail-federation-api contrail-federation-web oauth-java-client-demo"
+SERVICES="contrail-ca-server contrail-oauth-as contrail-federation-api contrail-federation-web oauth-java-client-demo contrail-federation-id-prov-support"
 
 openssl x509 -outform der -in /var/lib/contrail/ca-server/rootca-cert.pem -out ${OUTDIR}/root-ca.der
 
