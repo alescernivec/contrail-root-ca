@@ -36,6 +36,16 @@ update_web_conf(){
 	echo -e "<?xml version="1.0"?>\n<md:EntitiesDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">${METADATA}\n</md:EntitiesDescriptor>" > /usr/lib/contrail/federation-web/extra/remote_metadata.xml
 }
 
+update_oauth_conf(){
+	METADATA=`curl --insecure https://contrail-federation-id-prov-support/simplesaml/saml2/idp/metadata.php`; 
+	echo $METADATA > temp; 
+	exec print_xml.py temp | tail -n +2 > toadd
+	cat /etc/contrail/contrail-oauth-as/saml-metadata.xml toadd > saml-metadata.xml-temp
+	mv saml-metadata.xml-temp /etc/contrail/contrail-oauth-as/saml-metadata.xml
+	rm toadd; rm temp; 
+	echo "</EntitiesDescriptor>" >> /etc/contrail/contrail-oauth-as/saml-metadata.xml
+}
+
 if [ $# -ne $EXPECTED_ARGS ]
 then
 	print_help
@@ -64,6 +74,7 @@ then
 	sleep 20
 	echo "...done"
 	update_web_conf
+	update_oauth_conf
 	service tomcat6 restart
 	service apache2 reload
 	exit 0

@@ -18,4 +18,8 @@ cp saml20-sp-remote.php-mods.diff /usr/share/simplesamlphp-1.9.0/metadata/ && cd
 cd ${CWD2}
 cp saml20-idp-hosted.php-mods.diff /usr/share/simplesamlphp-1.9.0/metadata/ && cd /usr/share/simplesamlphp-1.9.0/metadata/ && patch -p0 < saml20-idp-hosted.php-mods.diff
 cd ${CWD2}
+cp saml-metadata.xml-mods.diff /etc/contrail/contrail-oauth-as && cd /etc/contrail/contrail-oauth-as/ && patch -p0 < saml-metadata.xml-mods.diff
+cd ${CWD2}
+cp oauth-as-mods.diff /etc/contrail/contrail-oauth-as && cd /etc/contrail/contrail-oauth-as/ && patch -p0 < oauth-as-mods.diff
+cd ${CWD2}
 cd $CWD 

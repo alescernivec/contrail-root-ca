@@ -1,0 +1,14 @@
+--- oauth-as.properties	2013-11-19 21:12:23.000000000 +0000
++++ oauth-as.properties-new	2013-11-20 15:38:35.046249353 +0000
+@@ -6,9 +6,9 @@
+ # path of the SAML metadata file
+ saml.metadataFile=/etc/contrail/contrail-oauth-as/saml-metadata.xml
+ # entity ID of local contrail-oauth-as (in the role of a Service Provider) in SAML metadata file
+-saml.SP.entityID=https://localhost:8443/oauth-as/
++saml.SP.entityID=https://contrail-oauth-as:8443/oauth-as/
+ # entity ID of Identity Provider in SAML metadata file that should be used to authenticate users
+-saml.IdP.entityID=https://multi.contrail-idp.contrail.eu/simplesaml/saml2/idp/metadata.php
++saml.IdP.entityID=https://contrail-federation-id-prov-support/simplesaml/saml2/idp/metadata.php
+ # SAML attributes mapping specified in JSON format {'AS attribute name' : 'IdP attribute name',...}
+ saml.attributesMapping={'uuid':'uuid'}
+ 
