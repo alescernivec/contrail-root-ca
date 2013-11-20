@@ -36,7 +36,7 @@ Now, navigate back to the checked out dir with oauth-java-client-demo maven proj
 
 Ask for an oauth2 token for user  contrailuser :
 ```
-$ mvn exec:java -Dexec.mainClass="org.ow2.contrail.common.oauth.demo.ClientCredentialsFlowDemo" -Dexec.args="getToken caa6e102-8ff0-400f-a120-23149326a936"
+$ /usr/share/contrail/oauth-java-client/demo/oauth-client-cred-flow-demo.sh getToken caa6e102-8ff0-400f-a120-23149326a936
 ```
 
 If you get an error, something is missconfigured.
@@ -49,7 +49,7 @@ Received access token: 965ec95f-9d51-3561-945f-ed9ad831663c
 
 Now, get the cert:
 ```
-mvn exec:java -Dexec.mainClass="org.ow2.contrail.common.oauth.demo.ClientCredentialsFlowDemo" -Dexec.args="getCert 965ec95f-9d51-3561-945f-ed9ad831663c"
+$ /usr/share/contrail/oauth-java-client/demo/oauth-client-cred-flow-demo.sh getCert 965ec95f-9d51-3561-945f-ed9ad831663c
 ```
 Of course, change the token UUID with the one obtained in the step before.
 
