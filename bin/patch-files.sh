@@ -31,4 +31,5 @@ cp oauth-as-mods.diff /etc/contrail/contrail-oauth-as && cd /etc/contrail/contra
 cd ${CWD2}
 cp oauth-as-web-xml-mods.diff /var/lib/tomcat6/webapps/oauth-as/WEB-INF && cd /var/lib/tomcat6/webapps/oauth-as/WEB-INF && patch -p0 < oauth-as-web-xml-mods.diff
 cd ${CWD2}
+mysql -u contrail -pcontrail contrail_oauth_as -e "update client set callback_uri=\"https://contrail-federation-web/oauth2callback\" where client_id=\"oauth-python-client-demo\";" 
 cd $CWD 
