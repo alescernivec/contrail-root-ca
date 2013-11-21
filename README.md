@@ -99,7 +99,7 @@ Reversed (or previously applied) patch detected!  Assume -R? [n]
 ```
 for any service, just answer "no" :) and you should be fine. File has already been patches.
 
-### If something is worng with Keystore
+### If something is wrong with Keystore
 
 ```
 keytool -list -keystore /etc/tomcat6/cacerts.jks
