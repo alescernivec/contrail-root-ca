@@ -12,12 +12,10 @@ Usage
 This will set up contrail testing repository - latest testing packages from Contrail:
 ```
 # echo "deb http://contrail.ow2.org/repositories/binaries/testing/xUbuntu_12.04/ ./" >> /etc/apt/sources.list
+# ### as an alternative (if upper does not work):
+# echo "http://download.opensuse.org/repositories/home:/contrail:/testing/xUbuntu_12.04/ ./" >> /etc/apt/sources.list 
 # wget -O - http://contrail.ow2.org/repositories/contrail.pub | sudo apt-key add -
 # apt-get update
-```
-Alternative repository is (in case you have problems with the ow2.org.
-```
-http://download.opensuse.org/repositories/home:/contrail:/testing/xUbuntu_12.04/
 ```
 
 This installs basic security packages and configures the key, certificates and service packages. 
