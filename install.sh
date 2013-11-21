@@ -49,7 +49,7 @@ update_certs_web(){
 
 # Updates Web Configuration with SAML metadata
 update_web_conf(){
-	METADATA=`curl --insecure https://contrail-federation-id-prov-support/simplesaml/saml2/idp/metadata.php` 
+	METADATA=`curl --insecure https://contrail-federation-id-prov-support/simplesaml/saml2/idp/metadata.php | tail -n +2` 
 	echo -e "<?xml version=\"1.0\"?>\n<md:EntitiesDescriptor xmlns:md=\"urn:oasis:names:tc:SAML:2.0:metadata\" xmlns:ds=\"http://www.w3.org/2000/09/xmldsig#\">${METADATA}\n</md:EntitiesDescriptor>" > /usr/lib/contrail/federation-web/extra/remote_metadata.xml
 }
 
