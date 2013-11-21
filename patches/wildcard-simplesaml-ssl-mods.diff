@@ -4,8 +4,8 @@
  <VirtualHost *:443>
  	ServerAdmin admin@contrail.eu
  
--        ServerName contrail-idp.contrail.eu
--        ServerAlias *.contrail-idp.contrail.eu
+-	ServerName contrail-idp.contrail.eu
+-	ServerAlias *.contrail-idp.contrail.eu
 +	ServerName contrail-federation-id-prov-support
 +	ServerAlias contrail-federation-id-prov-support
  	Alias /simplesaml /usr/share/simplesamlphp-1.9.0/www

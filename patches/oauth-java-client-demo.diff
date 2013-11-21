@@ -1,5 +1,5 @@
---- oauth-client-cred-flow-demo.properties	2013-11-20 08:53:05.275046752 +0000
-+++ oauth-client-cred-flow-demo.properties-new	2013-11-20 09:09:02.111047072 +0000
+--- oauth-client-cred-flow-demo.properties	2013-11-21 09:13:04.646708764 +0000
++++ oauth-client-cred-flow-demo.properties-new	2013-11-21 09:20:28.386708876 +0000
 @@ -1,13 +1,13 @@
  client.id=oauth-java-client-demo
  client.secret=somesecret

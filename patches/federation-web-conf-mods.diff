@@ -25,7 +25,8 @@
 +FEDERATION_WEB_CA_FILE='/var/lib/contrail/ca-server/rootca-cert.pem'
  TRUSTSTORE_DIR = '/etc/contrail/truststore'
  
- SSL_USE_DELEGATED_USER_CERT=False
+-SSL_USE_DELEGATED_USER_CERT=False
++SSL_USE_DELEGATED_USER_CERT=True
  
 -MULTI_IDP_FEDERATION='https://multi.contrail-idp.contrail.eu'
 +MULTI_IDP_FEDERATION='https://contrail-federation-id-prov-support'

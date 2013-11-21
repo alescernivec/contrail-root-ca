@@ -1,12 +1,13 @@
 --- hosts	2013-11-18 12:21:16.634371568 +0000
 +++ hosts-new	2013-11-18 12:21:03.474371446 +0000
-@@ -1,4 +1,10 @@
+@@ -1,4 +1,11 @@
  127.0.0.1 localhost
 +127.0.0.1 contrail-oauth-as
 +127.0.0.1 contrail-ca-server
 +127.0.0.1 oauth-java-client-demo
 +127.0.0.1 contrail-federation-id-prov-support
 +127.0.0.1 contrail-federation-web
++127.0.0.1 contrail-federation-api
 +
  127.0.1.1 ubuntu.defaultdomain ubuntu
  
