@@ -12,7 +12,7 @@ echo "Patching CA Server"
 cp ca-server-mods.diff /var/lib/tomcat6/webapps/ca/WEB-INF/ && cd /var/lib/tomcat6/webapps/ca/WEB-INF/ && patch -p0 < ca-server-mods.diff
 cd ${CWD2}
 echo "Patching Apache2 sites"
-cp contrail-federation-web-ssl-mods.diff /etc/apache2/sites-available/ && cd /etc/apache2/sites-available/ patch -p0 < contrail-federation-web-ssl-mods.diff
+cp contrail-federation-web-ssl-mods.diff /etc/apache2/sites-available/ && cd /etc/apache2/sites-available/ && patch -p0 < contrail-federation-web-ssl-mods.diff
 cd ${CWD2}
 cp wildcard-simplesaml-ssl-mods.diff /etc/apache2/sites-available/ && cd /etc/apache2/sites-available/ && patch -p0 < wildcard-simplesaml-ssl-mods.diff
 cd ${CWD2}
