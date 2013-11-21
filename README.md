@@ -20,14 +20,14 @@ This will set up contrail testing repository - latest testing packages from Cont
 
 This installs basic security packages and configures the key, certificates and service packages. 
 ```
-# ./install notest
+# ./install.sh notest
 ```
 Testing
 ----------
 
 How to test installed components? You should first install basic sec packages with "notest". After that, issue
 ```
-# ./install test
+# ./install.sh test
 ```
 
 Now, navigate back to the checked out dir with oauth-java-client-demo maven project.
