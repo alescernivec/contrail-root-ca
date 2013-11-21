@@ -13,7 +13,7 @@ This will set up contrail testing repository - latest testing packages from Cont
 ```
 # echo "deb http://contrail.ow2.org/repositories/binaries/testing/xUbuntu_12.04/ ./" >> /etc/apt/sources.list
 # ### as an alternative (if upper does not work):
-# echo "http://download.opensuse.org/repositories/home:/contrail:/testing/xUbuntu_12.04/ ./" >> /etc/apt/sources.list 
+# echo "deb http://download.opensuse.org/repositories/home:/contrail:/testing/xUbuntu_12.04/ ./" >> /etc/apt/sources.list 
 # wget -O - http://contrail.ow2.org/repositories/contrail.pub | sudo apt-key add -
 # apt-get update
 ```
