@@ -12,7 +12,7 @@ do
 	mkdir -p ${OUTDIR_S}
 	openssl req -newkey rsa:2048 -keyout ${OUTDIR_S}/$SERVICE.key -nodes -out ${OUTDIR_S}/$SERVICE.csr -subj /O=XLAB/OU=Research/CN=$SERVICE
 	echo "Creating certificate"
-	openssl ca -config CARoot/ca.conf -in ${OUTDIR_S}/$SERVICE.csr -out ${OUTDIR_S}/$SERVICE.crt -keyfile /var/lib/contrail/ca-server/rootca-key.pem -cert /var/lib/contrail/ca-server/rootca-cert.pem -verbose -batch
+	openssl ca -notext -config CARoot/ca.conf -in ${OUTDIR_S}/$SERVICE.csr -out ${OUTDIR_S}/$SERVICE.crt -keyfile /var/lib/contrail/ca-server/rootca-key.pem -cert /var/lib/contrail/ca-server/rootca-cert.pem -verbose -batch
 	echo "Creating PKCS12 files"
 	openssl pkcs12 -export -in ${OUTDIR_S}/$SERVICE.crt -inkey ${OUTDIR_S}/$SERVICE.key -out ${OUTDIR_S}/$SERVICE.pkcs12 -name "$SERVICE" -password pass:contrail
 	echo "Creating JKS file for the services"
