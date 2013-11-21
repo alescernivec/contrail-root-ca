@@ -57,10 +57,10 @@ update_oauth_conf(){
 	METADATA=`curl --insecure https://contrail-federation-id-prov-support/simplesaml/saml2/idp/metadata.php`; 
 	echo $METADATA > temp; 
 	exec ./bin/print_xml.py temp | tail -n +2 > toadd
-	cat /etc/contrail/contrail-oauth-as/saml-metadata.xml toadd > saml-metadata.xml-temp
+	cat patches/contrail-oauth-as/saml-metadata.xml toadd > saml-metadata.xml-temp
+	echo "</EntitiesDescriptor>" >> saml-metadata.xml-temp
 	mv saml-metadata.xml-temp /etc/contrail/contrail-oauth-as/saml-metadata.xml
 	rm toadd; rm temp; 
-	echo "</EntitiesDescriptor>" >> /etc/contrail/contrail-oauth-as/saml-metadata.xml
 }
 
 if [ $# -ne $EXPECTED_ARGS ]

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EntitiesDescriptor
+        xmlns="urn:oasis:names:tc:SAML:2.0:metadata"
+        xsi:schemaLocation="urn:oasis:names:tc:SAML:2.0:metadata http://docs.oasis-open.org/security/saml/v2.0/saml-schema-metadata-2.0.xsd"
+        cacheDuration="PT1H" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <EntityDescriptor
+            entityID="https://contrail-oauth-as:8443/oauth-as/">
+
+        <SPSSODescriptor
+                protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+            <AssertionConsumerService
+                    index="0"
+                    isDefault="true"
+                    Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+                    Location="https://contrail-oauth-as:8443/oauth-as/acs"
+                    />
+            <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
+                                 Location="https://contrail-oauth-as:8443/oauth-as/slo"/>
+        </SPSSODescriptor>
+
+        <Organization>
+            <OrganizationName lang="en">XLAB</OrganizationName>
+            <OrganizationDisplayName lang="en">XLAB Contrail Demo</OrganizationDisplayName>
+            <OrganizationURL lang="en">http://www.xlab.si</OrganizationURL>
+        </Organization>
+    </EntityDescriptor>
+
