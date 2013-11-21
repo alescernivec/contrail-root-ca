@@ -28,6 +28,7 @@ print_help() {
   echo ""
   echo "Usage: `basename $0` [OPTION]"
   echo "	OPTION can be 'test' or 'notest'"
+  echo "	     notest - installs ConSec services on localhost machine"
   echo "	       test - installs oauth-java-client-demo"
  
 }
@@ -94,6 +95,15 @@ then
 	update_oauth_conf
 	service tomcat6 restart
 	service apache2 reload
+	echo "Alright! You are now ready to use the services."
+	echo -e "\n"
+	echo "Please, add these entries to you /etc/hosts ( <IP> is IP of the localhost machine ):"
+	echo " <IP> contrail-oauth-as"
+	echo " <IP> contrail-ca-server"
+	echo " <IP> contrail-federation-id-prov-support"
+	echo " <IP> contrail-federation-web"
+	echo -e "\n"
+	echo "Now, navigate your browser to https://contrail-federation-web"
 	exit 0
 elif [ ${CONFIG} == "test" ]
 then
