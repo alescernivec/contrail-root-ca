@@ -73,6 +73,32 @@ List of services that are provided with the certificates:
 Troubleshooting
 ----------
 
+### Problems when generating certificates
+
+If you get this:
+```
+Adding contrail-federation-id-prov-support's cert to truststore
+unable to load certificate
+139844895221408:error:0906D06C:PEM routines:PEM_read_bio:no start line:pem_lib.c:696:Expecting: TRUSTED CERTIFICATE
+keytool error: java.lang.Exception: Certificate not imported, alias <contrail-federation-id-prov-support> already exists
+Adding ROOT CA's cert to the truststore
+keytool error: java.lang.Exception: Certificate not imported, alias <rootCa> already exists
+```
+issue 
+```
+cd bin && ./clean && cd ..
+```
+### Problems when patching files
+
+If you get
+```
+patching file saml20-idp-hosted.php
+Reversed (or previously applied) patch detected!  Assume -R? [n]
+```
+just answer "no" :)
+
+### If something is worng with Keystore
+
 ```
 keytool -list -keystore /etc/tomcat6/cacerts.jks
 ```
@@ -154,30 +180,3 @@ And just for fun, example how to generate **pkcs12** file:
 ```
  openssl pkcs12 -export -in ca-server-cert.pem -inkey ca-server-key.pem -CAfile /tmp/all-ca-certs.pem -out /var/lib/contrail/ca-server/ks.p12 -caname root -chain
 ```
-
-Troubleshooting
-----------
-
-### Problems when generating certificates
-
-If you get this:
-```
-Adding contrail-federation-id-prov-support's cert to truststore
-unable to load certificate
-139844895221408:error:0906D06C:PEM routines:PEM_read_bio:no start line:pem_lib.c:696:Expecting: TRUSTED CERTIFICATE
-keytool error: java.lang.Exception: Certificate not imported, alias <contrail-federation-id-prov-support> already exists
-Adding ROOT CA's cert to the truststore
-keytool error: java.lang.Exception: Certificate not imported, alias <rootCa> already exists
-```
-issue 
-```
-cd bin && ./clean && cd ..
-```
-### Problems when patching files
-
-If you get
-```
-patching file saml20-idp-hosted.php
-Reversed (or previously applied) patch detected!  Assume -R? [n]
-```
-just answer "no" :)
