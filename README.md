@@ -88,14 +88,16 @@ issue
 ```
 cd bin && ./clean && cd ..
 ```
+With that, RootCA is cleaned and certificates are regenerated. Now, try again with the whole installation. You should be fine.
+
 ### Problems when patching files
 
-If you get
+If you get messages like
 ```
 patching file saml20-idp-hosted.php
 Reversed (or previously applied) patch detected!  Assume -R? [n]
 ```
-just answer "no" :)
+for any service, just answer "no" :) and you should be fine. File has already been patches.
 
 ### If something is worng with Keystore
 
