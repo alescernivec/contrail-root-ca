@@ -11,3 +11,4 @@ do
 done
 
 rm -fr ${OUTDIR}/cacerts.jks
+rm -fr ${OUTDIR}/root-ca.der
