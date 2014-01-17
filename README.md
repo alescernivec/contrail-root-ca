@@ -18,6 +18,11 @@ This will set up contrail testing repository - latest testing packages from Cont
 # apt-get update
 ```
 
+To speed up process, run this: it installs git, clones this repo.
+```
+# apt-get install git; git clone https://github.com/alescernivec/contrail-root-ca.git; cd contrail-root-ca;
+```
+
 This installs basic security packages and configures the key, certificates and service packages. 
 ```
 # ./install.sh notest
