@@ -1,5 +1,5 @@
---- federation-web2.conf-orig	2014-02-11 08:12:09.015494676 +0000
-+++ federation-web2.conf	2014-02-11 08:16:36.387496508 +0000
+--- federation-web.conf 	2014-02-11 08:12:09.015494676 +0000
++++ federation-web.conf-new	2014-02-11 08:16:36.387496508 +0000
 @@ -1,29 +1,29 @@
  STATIC_ROOT = '/var/lib/contrail/federation/federation-web/static'
  
