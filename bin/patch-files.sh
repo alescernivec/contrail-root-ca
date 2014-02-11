@@ -6,7 +6,8 @@ echo "Patching Tomcat's server.xml"
 cp tomcat-server-mods.diff /etc/tomcat6/ && cd /etc/tomcat6/ && patch -p0 < tomcat-server-mods.diff 
 cd ${CWD2}
 echo "Patching hosts file"
-cp hosts-mods.diff /etc/ && cd /etc/ && patch -p0 < hosts-mods.diff
+#cp hosts-mods.diff /etc/ && cd /etc/ && patch -p0 < hosts-mods.diff
+./patch-hosts.sh
 cd ${CWD2}
 echo "Patching CA Server"
 cp ca-server-mods.diff /var/lib/tomcat6/webapps/ca/WEB-INF/ && cd /var/lib/tomcat6/webapps/ca/WEB-INF/ && patch -p0 < ca-server-mods.diff
