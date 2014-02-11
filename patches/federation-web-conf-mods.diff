@@ -1,12 +1,13 @@
---- federation-web.conf	2013-11-20 13:17:34.790249544 +0000
-+++ federation-web.conf-new	2013-11-20 13:44:06.902249248 +0000
-@@ -1,25 +1,25 @@
+--- federation-web2.conf-orig	2014-02-11 08:12:09.015494676 +0000
++++ federation-web2.conf	2014-02-11 08:16:36.387496508 +0000
+@@ -1,29 +1,29 @@
  STATIC_ROOT = '/var/lib/contrail/federation/federation-web/static'
  
 -FEDERATION_API_URL = 'http://localhost:8080/federation-api'
++FEDERATION_API_URL = 'http://contrail-federation-api:8080/federation-api'
+ FEDERATION_UUID = "dadb2c20-5351-11e3-8f96-0800200c9a66"
 -SLA_EXTRACTOR_BASE = 'http://localhost:8080/rest-monitoring/sla/slaextractor'
 -MONITORING_BASE = 'http://localhost:8080/rest-monitoring/monitoring'
-+FEDERATION_API_URL = 'http://contrail-federation-api:8080/federation-api'
 +SLA_EXTRACTOR_BASE = 'http://contrail-federation-api:8080/rest-monitoring/sla/slaextractor'
 +MONITORING_BASE = 'http://contrail-federation-api:8080/rest-monitoring/monitoring'
  ZOOKEEPER_BASE = '127.0.0.1:2181'
@@ -38,3 +39,6 @@
 -ONLINE_OAUTH2_CA_URI='https://localhost:8443/ca/o/delegateduser'
 +ONLINE_OAUTH2_CA_USE=True
 +ONLINE_OAUTH2_CA_URI='https://contrail-oauth-as:8443/ca/o/delegateduser'
+ 
+ # Monitoring
+ MON_DRIVER = {}
